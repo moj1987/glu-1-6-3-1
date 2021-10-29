@@ -8,7 +8,7 @@ public class DateTimeApi {
         LocalTime currentLocalTime = LocalTime.now();
         LocalDate currentLocalDate = LocalDate.now();
         LocalDateTime currentDateAndTime = LocalDateTime.now();
-        LocalDate mojBirthDate = getDate(Utils.MOJ_BIRTHDAY);
+        LocalDate mojBirthDate = getDate(Constants.MOJ_BIRTHDAY);
 
         printDateTime(currentLocalTime);
 
@@ -18,27 +18,31 @@ public class DateTimeApi {
 
         printDateTime(currentDateAndTime);
 
-        LocalDateTime localDateTimeAWeekFromNow = addDaysToCurrentTime(Utils.SEVEN_DAYS_OF_WEEK);
+        LocalDateTime localDateTimeAWeekFromNow = addDaysToCurrentTime(Constants.SEVEN_DAYS_OF_WEEK);
         printDateTime(localDateTimeAWeekFromNow);
 
-        printDateTime(Utils.PARIS_ZONE_ID);
-        printDateTime(Utils.TEHRAN_ZONE_ID);
-        printDateTime(Utils.SYDNEY_ZONE_ID);
+        printDateTime(Constants.PARIS_ZONE_ID);
+        printDateTime(Constants.TEHRAN_ZONE_ID);
+        printDateTime(Constants.SYDNEY_ZONE_ID);
 
-        long differenceDateInDays = calculateDifferenceDateInDays(LocalDate.parse(Utils.WWII_START_DATE), currentLocalDate);
+        long differenceDateInDays = calculateDifferenceDateInDays(LocalDate.parse(Constants.WWII_START_DATE), currentLocalDate);
         System.out.println(differenceDateInDays);
 
-        LocalDateTime currentDateTimePlusTwentySixHundredHours = addHoursToCurrentTime(Utils.TWENTY_SIX_HUNDRED_HOURS);
+        LocalDateTime currentDateTimePlusTwentySixHundredHours = addHoursToCurrentTime(Constants.TWENTY_SIX_HUNDRED_HOURS);
         printDateTime(currentDateTimePlusTwentySixHundredHours);
 
-        DateTimeFormatter format = getFormat(Utils.DD_MM_YYYY_DATE_FORMAT);
+        DateTimeFormatter format = getFormat(Constants.DD_MM_YYYY_DATE_FORMAT);
         System.out.println(formatDate(mojBirthDate, format));
 
         printDayOfWeek(mojBirthDate);
 
-        OffsetDateTime currentTimeOffsetByTwoHours = OffsetDateTime.of(currentLocalDate, currentLocalTime, Utils.ZONE_OFFSET_BY_TWO_HOURS);
+        OffsetDateTime currentTimeOffsetByTwoHours = OffsetDateTime.of(currentLocalDate, currentLocalTime, Constants.ZONE_OFFSET_BY_TWO_HOURS);
         System.out.println(currentTimeOffsetByTwoHours);
     }
+
+
+
+
 
     static void printDayOfWeek(LocalDate localDate) {
         System.out.println(localDate.getDayOfWeek());
