@@ -38,7 +38,7 @@ public class TimeExercises {
 
     String formatDateToDdMmYyyy(LocalDate localDate) {
         DateTimeFormatter format = DateTimeFormatter.ofPattern(Constants.DD_MM_YYYY_DATE_FORMAT);
-        
+
         return localDate.format(format);
     }
 
